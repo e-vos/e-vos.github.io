@@ -3,6 +3,6 @@ layout: default
 ---
 
 <section class="post">
-  <span class="meta">{{ page.title }} <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d %Y" }}</time> &middot; </span>
+  <span class="meta"><h2>{{ page.title }} &middot; <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d %Y" }}</time></h2></span>
   {{ content }}
 </section>
