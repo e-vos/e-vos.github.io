@@ -1,10 +1,16 @@
 ---
 layout: default
 ---
+<style>
+  .someClass {
+     display: flex;
+     justify-content: space-between;
+  }
+</style>
 
 <section class="post">
   <span class="meta">
-    <div class="d-flex justify-content-between">
+    <div class="someClass">
       <div><h3>{{ page.title }}</h3></div>
       <div><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></div>
     </div>
