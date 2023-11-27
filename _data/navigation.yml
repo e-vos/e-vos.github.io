@@ -1,11 +1,11 @@
 links:
 - title: Writing
   url: /
-- title: About
-  url: /about
 - title: Projects
   url: /projects
-- title: Search
-  url: /search
+- title: About
+  url: /about
 - title: LinkedIn
   url: https://www.linkedin.com/in/elliotvosburgh/
+- title: Search
+  url: /search
