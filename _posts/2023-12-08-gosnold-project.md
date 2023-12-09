@@ -8,5 +8,5 @@ tags: [portfolio]
 
 <center>
 Topographic Tool for the Town of Gosnold, Massachusetts
-[Gosnold Project Front](https://github.com/e-vos/e-vos.github.io/blob/main/imgs/gosnold_front.png)
+<img src="/imgs/gosnold_front.png">
 </center>
