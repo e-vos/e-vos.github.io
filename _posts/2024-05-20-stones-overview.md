@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Mapping the Stone Domain in Rhode Island
-description: An overview of my graduate research, "A LiDAR Approach to Delineating Historical Land Use Patterns"
-summary: An overview of my graduate research, "A LiDAR Approach to Delineating Historical Land Use Patterns"
+description: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
+summary: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
 comments: false
-tags: [GIS] [remote sensing] [LiDAR] [archaeology] [history] [project]
+tags: [GIS, remote sensing, LiDAR, archaeology, history, project]
 ---
 
 Test
