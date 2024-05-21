@@ -9,4 +9,7 @@ tags: [GIS, remote sensing, LiDAR, archaeology, history, project]
 
 Testest
 
-<embed src="https://github.com/e-vos/e-vos.github.io/blob/main/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" />
+<embed src="https://e-vos.github.io/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" />
+
+<embed src="https://belovanna.github.io/assets/download/sample.pdf" type="application/pdf" />
+
