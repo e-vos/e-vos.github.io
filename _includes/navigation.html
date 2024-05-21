@@ -2,7 +2,6 @@
     <nav role="navigation">
         <center>
             <ul>
-                <li><img src="/imgs/copylayer6.png" id="navbar-image"></li>
                 {% for item in site.data.navigation.links %}
                     <li><a href="{{ item.url }}" {% if item.url == page.url %} class="active"{% endif %}>{{ item.title }}</a></li>
                 {% endfor %}
