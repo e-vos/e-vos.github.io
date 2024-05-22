@@ -7,4 +7,4 @@ comments: false
 tags: [GIS, remote sensing, LiDAR, archaeology, history, project]
 ---
 
-<embed width="75%" height="750" src="https://e-vos.github.io/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" />
+<embed height="750" src="https://e-vos.github.io/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" />
