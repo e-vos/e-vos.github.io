@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Project: A LiDAR Approach to Delineating Historical Land Use Patterns
+title: A LiDAR Approach to Delineating Historical Land Use Patterns
 description: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
 summary: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
 comments: false
