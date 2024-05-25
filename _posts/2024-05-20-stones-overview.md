@@ -1,17 +1,25 @@
 ---
 layout: post
-title: A LiDAR Approach to Delineating Historical Land Use Patterns
+title: Introduction to the Rhode Island Stone Wall Mapping Project
 description: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
 summary: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
 comments: false
 tags: [GIS, remote sensing, LiDAR, archaeology, history, project]
 ---
 
-*This post describes an ongoing investigation into the archaeological resources of Rhode Island.*
+<div align="center"> *This post describes an ongoing investigation into the archaeological resources of Rhode Island.* </div>
 
-The network of stone walls that criss-cross the state of Rhode Island is an enduring reminder of human ingenuity, labor, and perseverance. These features, included under the term “stone domain,” are important to the fields of environmental conservation, ecology, and historical preservation. To better understand these networks, and the technologies employed in their delineation, a refined methodology was developed and applied to high-resolution Light Detection and Ranging (LiDAR) data.
+The network of stone walls that criss-cross the state of Rhode Island is an enduring reminder of human ingenuity, labor, and perseverance. These features, included under the term “stone domain,” are important to the fields of environmental conservation, ecology, and historical preservation. To better understand these networks, and the technologies employed in their delineation, a refined methodology was developed and applied to high-resolution [Light Detection and Ranging](https://www.neonscience.org/resources/learning-hub/tutorials/lidar-basics) (LiDAR) data.
 
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Rhode Island Conservation Land" src="https://e-vos.github.io/walls_map"></iframe></div>
+I began this project as a graduate student at the University of Rhode Island. At the time, I was interested in finding a practical application for remote sensing data. A statewide LiDAR dataset was due to be released in the Fall of 2023, and I wanted to take advantage of its resolution as much as I was technically capable of doing. In this way, I began to think about how I would use this data in a way that people outside of academia could appreciate.
+
+I developed a methodology that takes filtered data points in the LiDAR point cloud based on their relative height from the ground. I decided on a height range of 0.25- to 4.5-ft, based on *in situ* measurements I took in West Greenwich. 
+
+Below you will find a dynamic map containing walls and archaeological sites (foundations, cellar holes, horse mill circles, etc.). Click the magnifying glass icon to center the map on an exact location (i.e. an address, town, etc.) or click the pin icon to zoom to your own location.
+
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Rhode Island stone walls" src="https://e-vos.github.io/walls_map"></iframe></div>
+
+<div align="center"> **For a fullscreen version, [click this link](https://e-vos.github.io/walls_map).**Map hosted on GitHub Pages. Made using [Leaflet](https://leafletjs.com/) through [QGIS](https://qgis.org/en/site/index.html). All data is created and maintained by the author (Elliot Vosburgh).</div>
 
 <!--- <embed height="750" src="https://e-vos.github.io/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" /> --->
 
