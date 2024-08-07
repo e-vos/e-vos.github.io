@@ -2,15 +2,16 @@
 layout: page
 title: About
 ---
-
-Hello! I'm an experienced geospatial scientist with a special interest in the remote sensing of natural resources. I have been involved in a diverse range of GIS and remote sensing projects; and have developed numerous original methodologies within the fields of landscape ecology, fire science, wetland dynamics, archaeology, and planning, among others.
+I am a geospatial scientist specializing in remote sensing and spatial analysis, with a focus on human geography, urbanization, natural hazards, and coastal issues. My expertise in geographic information systems (GIS), spatial analysis, and Python🐍 programming allows me to tackle complex questions at the intersection of human communities and the environment.
 {: style="text-align: justify"}
 
-My passion lies in leveraging cutting-edge technologies to gain insight from a variety of datasets, ultimately contributing to our understanding of social and environmental issues. There is nothing more satisfying to me than applying my expertise in spatial science to real-world problems. Delivering a presentable narrative at the end of an analysis is what I look forward to the most in my work.
+Currently, I am working on several impactful projects:
 {: style="text-align: justify"}
 
-This website contains my own writing on a variety of geospatial, environmental, and history topics.
+1. Developing an early detection and monitoring tool for cyanobacteria blooms using multispectral imagery, in situ water quality data, and Python.
+2. Employing ground object detection techniques to map and analyze archaeological features.
+3. Quantifying post-fire vegetation recovery in the Northern Sierra Nevada using HLS data.
 {: style="text-align: justify"}
 
-Specialties: Spatial Analysis, Geographic Information Systems (GIS), Remote Sensing, Python, Cartography, Planning, & Communication.
+In addition to these projects, I provide GIS and remote sensing services to small clients, offering tailored solutions for their unique needs.
 {: style="text-align: justify"}
