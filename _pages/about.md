@@ -11,7 +11,6 @@ Currently, I am working on several impactful projects:
 1. Developing an early detection and monitoring tool for cyanobacteria blooms using multispectral imagery, in situ water quality data, and Python.
 2. Employing ground object detection techniques to map and analyze archaeological features.
 3. Quantifying post-fire vegetation recovery in the Northern Sierra Nevada using HLS data.
-{: style="text-align: justify"}
 
 In addition to these projects, I provide GIS and remote sensing services to small clients, offering tailored solutions for their unique needs.
 {: style="text-align: justify"}
