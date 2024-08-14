@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-I am a geospatial scientist specializing in remote sensing and spatial analysis, with a focus on human geography, urbanization, natural hazards, and coastal issues. My expertise in geographic information systems (GIS), spatial analysis, and Python🐍 programming allows me to tackle complex questions at the intersection of human communities and the environment.
+I am a geospatial scientist specializing with a focus on human geography, urbanization, archaeometry, natural hazards, and coastal issues. My expertise in geographic information systems (GIS), spatial analysis, and Python🐍 programming allows me to tackle complex questions at the intersection of human communities and the environment.
 {: style="text-align: justify"}
 
 Currently, I am working on several impactful projects:
