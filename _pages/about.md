@@ -2,15 +2,9 @@
 layout: page
 title: About
 ---
-I am a geospatial scientist specializing with a focus on human geography, urbanization, archaeometry, natural hazards, and coastal issues. My expertise in geographic information systems (GIS), spatial analysis, and Python🐍 programming allows me to tackle complex questions at the intersection of human communities and the environment.
-{: style="text-align: justify"}
+I am a geospatial scientist focused on researching human geography, urbanization, and natural hazards. I enjoy working on problems at the interface of the environment and human communities. My work has included projects in archaeometry, land use planning, resilience planning, and ecological monitoring, among other topics. 
 
-Currently, I am working on several impactful projects:
-{: style="text-align: justify"}
+Presently, I am developing an early detection and monitoring tool for cyanobacteria blooms using Python 🐍. I am also writing a manuscript for publication on quantifying post-fire vegetation recovery in the Northern Sierra Nevada (California). As the founder of the Rhode Island Stone Wall Mapping Project, I am also employing ground object detection techniques to map and analyze the spatial patterns of stone walls there.
 
-1. Developing an early detection and monitoring tool for cyanobacteria blooms using multispectral imagery, in situ water quality data, and Python.
-2. Employing ground object detection techniques to map and analyze archaeological features.
-3. Quantifying post-fire vegetation recovery in the Northern Sierra Nevada using HLS data.
-
-In addition to these projects, I provide GIS and remote sensing services to small clients, offering tailored solutions for their unique needs.
+In addition to these projects, I provide GIS and remote sensing services to small clients, offering tailored solutions for their unique needs. Feel free to connect with me to discuss how my skills and experience can contribute to your organization’s goals.
 {: style="text-align: justify"}
