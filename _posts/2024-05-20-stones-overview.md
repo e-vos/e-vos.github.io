@@ -18,10 +18,7 @@ I began this project as a graduate student at the University of Rhode Island. At
 
 <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><small><a href="//evos-geo.maps.arcgis.com/apps/Embed/index.html?webmap=9056e6669d91456bb4ae0488023b6af8&extent=-72.1808,41.1117,-70.8247,41.7372&zoom=true&scale=true&search=true&searchextent=true&legendlayers=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="RI Stone Wall Mapping Project" src="//evos-geo.maps.arcgis.com/apps/Embed/index.html?webmap=9056e6669d91456bb4ae0488023b6af8&extent=-72.1808,41.1117,-70.8247,41.7372&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&legendlayers=true&disable_scroll=true&theme=light"></iframe></div>
 
-Click the magnifying glass icon to center the map on a location of your choice or click the pin icon to zoom to your own location.
-{: style="text-align: justify"}
-
-For a fullscreen version, [click this link](https://e-vos.github.io/walls_map). Made using [Leaflet](https://leafletjs.com/) through [QGIS](https://qgis.org/en/site/index.html). All data is created and maintained by the author.
+All data is created and maintained by the author.
 {: style="text-align: justify"}
 <!--- <embed height="750" src="https://e-vos.github.io/pdf/A%20LiDAR%20Approach%20To%20Delineating%20Historical%20Land%20Use%20Patterns.pdf" type="application/pdf" /> --->
 
