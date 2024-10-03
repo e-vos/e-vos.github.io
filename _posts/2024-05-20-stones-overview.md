@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Introduction to the Rhode Island Stone Wall Mapping Project
-description: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
-summary: An overview of my graduate research, A LiDAR Approach to Delineating Historical Land Use Patterns
+description: An overview of the Rhode Island Stone Wall Mapping Project (RISWMP)
+summary: Rhode Island Stone Wall Mapping Project (RISWMP)
 comments: false
 tags: [GIS, remote sensing, LiDAR, archaeology, history, project]
 ---
@@ -16,8 +16,7 @@ The network of stone walls that criss-cross the state of Rhode Island is an endu
 I began this project as a graduate student at the University of Rhode Island. At the time, I was interested in finding a practical application for remote sensing data. A statewide LiDAR dataset was due to be released in the Fall of 2023, and I wanted to take advantage of its resolution as much as I was technically capable of doing. In this way, I began to think about how I would use this dataset in a way that people outside of academia could appreciate.
 {: style="text-align: justify"}
 
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Rhode Island stone walls" src="https://e-vos.github.io/walls_map"></iframe></div>
-
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><small><a href="//evos-geo.maps.arcgis.com/apps/Embed/index.html?webmap=9056e6669d91456bb4ae0488023b6af8&extent=-72.1808,41.1117,-70.8247,41.7372&zoom=true&scale=true&search=true&searchextent=true&legendlayers=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="RI Stone Wall Mapping Project" src="//evos-geo.maps.arcgis.com/apps/Embed/index.html?webmap=9056e6669d91456bb4ae0488023b6af8&extent=-72.1808,41.1117,-70.8247,41.7372&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&legendlayers=true&disable_scroll=true&theme=light"></iframe></div>
 
 Click the magnifying glass icon to center the map on a location of your choice or click the pin icon to zoom to your own location.
 {: style="text-align: justify"}
