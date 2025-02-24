@@ -1,0 +1,83 @@
+/* Ensure full viewport height */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Wrapper for centering the content */
+.wrapper {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+/* Main content area */
+.main-content {
+  width: 75vw;  /* 85% of the viewport width */
+  height: 85vh; /* 70% of the viewport height */
+  background-color: #c7c7c7;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Sidebar - fixed, for vertical alignment */
+.sidebar {
+    position: fixed;
+    width: auto;
+    padding: 20px;
+    gap: 1.1rem;
+	background: #c7c7c7;
+	box-shadow: 0px 0px 10px #f0f0f0;
+	box-sizing: border-box;
+	border-radius: 7px;
+	text-align: center;
+	top: calc(50% - 42.5%);
+	left: 7.5%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Sidebar links */
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-size: inherit;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Heading styling */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1rem;
+}
+
+/* Media Query: Hide sidebar on small screens */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;  /* Hide the sidebar when the screen is small */
+  }
+
+  /* Adjust the main content to take up full width */
+  .main-content {
+    width: 85vw; /* Main content will take full width */
+  }
+}
