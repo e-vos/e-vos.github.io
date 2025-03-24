@@ -6,4 +6,4 @@
             document.getElementById('nav-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error loading navigation:', error));
-});
+});*/
