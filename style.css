@@ -7,7 +7,7 @@ html, body {
 
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;  /* Start positioning elements from top */
   align-items: center;
   height: 100%;
   width: 100%;
@@ -20,7 +20,7 @@ html, body {
   width: 85vw;
   height: 85vh;
   background-color: white;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
   border-radius: 10px;
   margin: auto;
@@ -41,13 +41,12 @@ nav {
   background-color: #ffffff;
   border-radius: 7px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
-  position: absolute;
-  bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
-  padding: 10px 20px;
+  padding: 7.5px 0px;
+  margin-bottom: auto;
 }
 
 nav ul {
@@ -91,7 +90,6 @@ nav a:focus {
 
   nav {
     padding: 10px;
-    bottom: 10px;
     width: 90%;
   }
 
