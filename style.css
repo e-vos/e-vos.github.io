@@ -11,35 +11,34 @@ html, body {
   align-items: center;
   height: 100%;
   width: 100%;
-  background: #a7a7a7;
+  background: white;
   flex-direction: column;
   position: relative;
 }
 
 .main-content {
   width: 65vw;
-  min-height: 75vh;  /* Ensure there's a minimum height */
-  background-color: #fff;
+  min-height: 75vh;
+  background-color: none;
   padding: 25px;
   box-sizing: border-box;
   border-radius: 5px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Vertically center .page-content */
+  justify-content: center;
   align-items: center;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);*/
   position: relative;
 }
 
 .page-content {
   padding: 0 40px;
   overflow-y: auto;
-  width: 100%;  /* Full width to make it responsive */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* Align content to the top */
-  /* Remove flex-grow to allow dynamic height based on content */
+  justify-content: flex-start;
 }
 
 .front-blurb {
@@ -92,56 +91,37 @@ nav a:focus {
   outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .main-content {
-    width: 90vw;
-    min-height: 80vh;  /* Ensure there's a minimum height for smaller screens */
-    padding: 20px;
-  }
-
-  nav {
-    padding: 7.5px 20px;  /* Keep padding similar to original for small screens */
-    /* Keep nav width and height unchanged */
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav li {
-    margin: 10px 0;
-  }
-
-  nav a {
-    font-size: 1rem;
-    padding: 10px 0;
-  }
-
-  .page-content {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    width: 95vw;
-    min-height: 85vh;  /* Ensure there's a minimum height for even smaller screens */
+    width: 100vw;
+    min-height: 85vh;
     padding: 15px;
-  }
-
-  nav {
-    padding: 7.5px 20px;  /* Keep the padding the same */
-    /* No width/height adjustments for nav */
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    padding: 8px 0;
   }
 
   .page-content {
     padding: 0 15px;
+  }
+  
+  .front-blurb {
+	width: 85%;
+	margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content {
+    width: 100vw;
+    min-height: 85vh;
+    padding: 15px;
+  }
+
+  .page-content {
+    padding: 0 15px;
+  }
+  
+    .front-blurb {
+	width: 100%;
+	margin: 0 auto;
   }
 }
 
