@@ -1,45 +1,56 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: sans-serif;
   line-height: 1.6;
 }
 
 .wrapper {
   display: flex;
-  justify-content: flex-start;  /* Start positioning elements from top */
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   width: 100%;
-  background: #f4f4f4;
+  background: #a7a7a7;
   flex-direction: column;
   position: relative;
 }
 
 .main-content {
-  width: 85vw;
-  height: 85vh;
-  background-color: white;
+  width: 65vw;
+  min-height: 75vh;  /* Ensure there's a minimum height */
+  background-color: #fff;
   padding: 25px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;  /* Vertically center .page-content */
+  align-items: center;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .page-content {
   padding: 0 40px;
-  flex-grow: 1;
   overflow-y: auto;
-  max-height: 100%;
+  width: 100%;  /* Full width to make it responsive */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Align content to the top */
+  /* Remove flex-grow to allow dynamic height based on content */
+}
+
+.front-blurb {
+  width: 50%;
+  margin: 0 auto;
 }
 
 nav {
   padding: 15px 20px;
   background-color: #ffffff;
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
@@ -81,16 +92,16 @@ nav a:focus {
   outline-offset: 2px;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .main-content {
     width: 90vw;
-    height: auto;
+    min-height: 80vh;  /* Ensure there's a minimum height for smaller screens */
+    padding: 20px;
   }
 
   nav {
-    padding: 10px;
-    width: 90%;
+    padding: 7.5px 20px;  /* Keep padding similar to original for small screens */
+    /* Keep nav width and height unchanged */
   }
 
   nav ul {
@@ -115,6 +126,13 @@ nav a:focus {
 @media (max-width: 480px) {
   .main-content {
     width: 95vw;
+    min-height: 85vh;  /* Ensure there's a minimum height for even smaller screens */
+    padding: 15px;
+  }
+
+  nav {
+    padding: 7.5px 20px;  /* Keep the padding the same */
+    /* No width/height adjustments for nav */
   }
 
   nav a {
@@ -125,4 +143,12 @@ nav a:focus {
   .page-content {
     padding: 0 15px;
   }
+}
+
+.rounded-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
