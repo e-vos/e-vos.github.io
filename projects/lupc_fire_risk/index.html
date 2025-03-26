@@ -7,29 +7,23 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
     
-    <title>Projects</title>
+    <title>Projects ~ Maine LUPC - Modeling Island Defensible Space</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="main-content">
             <div class="page-content">
-                <h3 style="text-align: center; margin: 0;">Projects</h3>
+                <h3 style="text-align: center; margin: 0;">Modeling Island Defensible Space (LUPC)</h3>
                 <div class="front-blurb">
 					<p align="justify">
-						<br>Current:
-						<ul>
-							<li><a href="/projects/riswmp/">Rhode Island Stone Wall Mapping Project</a></li>
-						</ul>
-						<br>Past:
-						<ul>
-							<li><a href="projects/simmons_pond">GIS/RS Historical Analysis of Simmons Mill Pond Management Area</a></li>
-							<li><a href="projects/little_compton_walls">Stone Wall Age Analysis for the Town of Little Compton, Rhode Island</a></li>
-							<li><a href="projects/lupc_fire_risk">Evaluating Defensible Space for Maine Islands</a></li>
-							<li><a href="projects/modeling_coastal_resilience">Modeling Coastal Resilience for Maine Islands</a></li>
-							<li><a href="projects/postfire_hls">Post-fire Vegetation Regrowth Analysis via Harmonized Data</a></li>
-							<li><a href="projects/gosnold_tool">Resilience Planning Tool for the Town of Gosnold, Massachusetts</a></li>
-							<li><a href="projects/wetlands_lidar_analysis">LiDAR Analysis of Wetlands</a></li>
-						</ul>
+						<br> Using the structure inventory that I had <a href="/projects/modeling_coastal_resilience">made in a previous project</a>, I extracted trees from LiDAR data to assess structure risk from wildfires for select islands in the <a href="https://experience.arcgis.com/experience/92c5fdb55f6245c58dc556479a905341">LUPC service area</a>. Defensible space is critical for reducing the amount of combustible fuel near dwellings and other structures, and its importance is defined in the Maine Land Use Planning Commission's <a href="https://www.maine.gov/dacf/lupc/laws_rules/rule_chapters/Ch10_SubchapterIII.pdf">Land Use Districts and Standards document</a> (Chapter 10.25,e "Development Standards").
+					</p>
+					<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Structure Risk Map" src="//evos-geo.maps.arcgis.com/apps/Embed/index.html?webmap=80e16059071f4d8881bdeff33619ac25&extent=-69.4411,43.7394,-68.7631,44.04&zoom=true&previewImage=false&scale=true&legend=true&disable_scroll=true&theme=light"></iframe></div>
+					<p align="justify">
+						For more details, please take a look at <a href="https://storymaps.arcgis.com/stories/c7eff116501547b4bd3023f7a31d538b">a StoryMap that I made about this project</a>. This methodology may easily be expanded upon to include the entire service area, given adequate computational resources. It may also be simplified by just executing the entire analysis in Python. This project was done as part of a course I took during my Master's degree, which required me to use Model Builder.
+					</p>
+					<p>
+						Keep a look out for a repeat of this analysis with the tweaks I've described above!
 					</p>
 				</div>
             </div>
@@ -42,5 +36,6 @@
             </ul>
         </nav>
     </div>
+	<script src="/script.js"></script>
 </body>
 </html>
