@@ -36,3 +36,24 @@ window.onload = function() {
   }
 };
 */
+
+const slides = document.querySelectorAll('.slide');
+
+let currentIndex = 0;
+
+function updateImage() {
+  slides.forEach(slide => slide.style.display = 'none');
+  
+  slides[currentIndex].style.display = 'block';
+}
+updateImage();
+document.getElementById('prevBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+  
+  updateImage();
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+  
+  updateImage();
+});
