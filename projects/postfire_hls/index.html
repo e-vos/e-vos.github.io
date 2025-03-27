@@ -7,29 +7,30 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
     
-    <title>Projects</title>
+    <title>Projects ~ Post-fire Vegetation Recovery via Harmonized Landsat Sentinel-2 Data</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="main-content">
             <div class="page-content">
-                <h3 style="text-align: center; margin: 0;">Projects</h3>
+                <h3 style="text-align: center; margin: 0;">Post-fire Vegetation Recovery via Harmonized Landsat Sentinel-2 Data</h3>
                 <div class="front-blurb">
 					<p align="justify">
-						<br>Current:
-						<ul>
-							<li><a href="/projects/riswmp/">Rhode Island Stone Wall Mapping Project</a></li>
-						</ul>
-						<br>Past:
-						<ul>
-							<li><a href="projects/simmons_pond">GIS/RS Historical Analysis of Simmons Mill Pond Management Area</a></li>
-							<li><a href="projects/little_compton_walls">Stone Wall Age Analysis for the Town of Little Compton, Rhode Island</a></li>
-							<li><a href="projects/lupc_fire_risk">Evaluating Defensible Space for Maine Islands</a></li>
-							<li><a href="projects/modeling_coastal_resilience">Modeling Coastal Resilience for Maine Islands</a></li>
-							<li><a href="projects/postfire_hls">Post-fire Vegetation Regrowth Analysis via Harmonized Data</a></li>
-							<li><a href="projects/gosnold_tool">Resilience Planning Tool for the Town of Gosnold, Massachusetts</a></li>
-							<li><a href="projects/wetlands_lidar_analysis">LiDAR Analysis of Wetlands</a></li>
-						</ul>
+						<br>Harmonized Landsat Sentinel-2 (HLS) data is a collection of Landsat 8/9 and Sentinel-2A/B images that have been "harmonized" using four algorithms: atmospheric correction, spatial coregistration, BRDF ("view angle"), and bandpass adjustment. In other words, HLS maximizes the number of multispectral images for a given time period by combining Landsat and Sentinel into a single, "harmonious" dataset.
+					</p>
+					<div class="slideshow-container">
+						<img id="slide" src="/images/hls_1.png" alt="Image 1" class="slide">
+						<img id="slide" src="/images/hls_2.png" alt="Image 2" class="slide">
+						<img id="slide" src="/images/hls_3.png" alt="Image 3" class="slide">
+						<img id="slide" src="/images/hls_4.png" alt="Image 4" class="slide">
+						<img id="slide" src="/images/hls_5.png" alt="Image 5" class="slide">
+						<div class="controls">
+							<button id="prevBtn" class="control-btn"><</button>
+							<button id="nextBtn" class="control-btn">></button>
+						</div>
+					</div>
+					<p align="justify">
+						We can analyze pre-, intra-, and post-fire conditions for large areas using multispectral satellite data for individual fire events, single or multiple seasons, and also compare events in different parts of the world. This project focused on a single event, the 2020 North Complex Fire in Plumas National Forest, California. By creating a pixel point grid from four years of HLS data and defining spatial sectors for the fire, I was able to analyze post-fire vegetation recovery rates for the entire burn zone, multiple sectors, individual sectors, and individual 30-meter pixels.
 					</p>
 				</div>
             </div>
@@ -42,5 +43,6 @@
             </ul>
         </nav>
     </div>
+	<script src="/script.js"></script>
 </body>
 </html>
