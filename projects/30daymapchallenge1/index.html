@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>30-Day Map Challenge ~ Day #1 ~ Shipwrecks from Wikipedia</title>
+<style>
+	body { margin: 0; overflow: hidden; font-family: sans-serif; }
+	
+	canvas { display: block; }
+	
+	#tooltip {
+		position: absolute;
+		pointer-events: none;
+		background-color: rgba(256,256,256,0.9);
+		border-radius: 4px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+		color: #111222;
+		padding: 6px 10px;
+		font-size: 23px;
+		max-width: 350px;
+		height: fit-content;
+		line-height: 1.6;
+		display: none;
+		z-index: 10;
+	}
+	
+	#info-box {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		background: rgba(255, 255, 255, 1);
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+		border-radius: 4px;
+		padding: 15px 20px;
+		min-width: 25vw;
+		width: 35vw;
+		color: #111222;
+		font-size: 23px;
+		line-height: 1.2;
+		z-index: 20;
+	}
+
+	#info-box h2 {
+		margin: 0 0 8px 0;
+		font-size: 26px;
+	}
+
+</style>
+</head>
+<body>
+	<div id="tooltip"></div> <!-- for tooltip popup -->
+	
+	<div id="info-box">
+		<h2>30-Day Map Challenge: Day 1</h2>
+		<p>Authors: Map and manipulated data by Elliot Vosburgh; text and coordinate information by Wikipedia contributors</p>
+		<p>This is my entry for Day 1 of the 30-Day Map Challenge. Today's theme was "Points." I decided to brush up on my web scraping skills with this one by using Python to scrape Wikipedia tables for shipwreck data.</p>
+		<p>This little project makes a nice jumping off point for other 3D map ideas I have.</p>
+	</div>
+
+	<script type="module">
+		// threejs imports
+		import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js?module';
+		import { OrbitControls } from 'https://unpkg.com/three@0.158.0/examples/jsm/controls/OrbitControls.js?module';
+
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+		camera.position.set(0, 50, 100);
+
+		const renderer = new THREE.WebGLRenderer({ antialias: true });
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(renderer.domElement);
+
+		const controls = new OrbitControls(camera, renderer.domElement);
+		controls.enableDamping = true;
+
+		const RADIUS = 35; // globe radius
+		const textureLoader = new THREE.TextureLoader();
+		const globeTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/World_location_map.svg/2560px-World_location_map.svg.png');
+
+		const globeGeometry = new THREE.SphereGeometry(RADIUS, 64, 64);
+		const globeMaterial = new THREE.MeshPhongMaterial({
+			map: globeTexture,
+			flatShading: false
+		});
+		const globe = new THREE.Mesh(globeGeometry, globeMaterial);
+		scene.add(globe);
+
+		scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+		directionalLight.position.set(100, 100, 100);
+		scene.add(directionalLight);
+
+		// necessary to convert coords found in geojson, https://threejs.org/docs/#Vector3, https://stackoverflow.com/questions/74379461/markers-only-mapping-to-half-of-globe
+		function convertVector3(lat, lon, radius) {
+			const phi = (90 - lat) * (Math.PI / 180);
+			const theta = (lon + 180) * (Math.PI / 180);
+			const x = -radius * Math.sin(phi) * Math.cos(theta);
+			const z = radius * Math.sin(phi) * Math.sin(theta);
+			const y = radius * Math.cos(phi);
+			return new THREE.Vector3(x, y, z);
+		}
+
+		const tooltip = document.getElementById('tooltip');
+		
+		fetch('/shipwrecks.geojson')
+		.then(res => res.json())
+		.then(data => {
+			// Define colors by flag
+			const flagColors = {
+				'United Kingdom': 0x1E90FF,
+				'Royal Navy': 0x1C90FF,
+				'United States': 0xFF0000,
+				'United States Coast Guard': 0xFFF000,
+				'United States Navy': 0xFFFF00,
+				'Canada': 0x008CFF,
+				'Portugal': 0x62BD8C,
+				'Germany': 0x000000,
+				'Kriegsmarine': 0x000010,
+				'Imperial Germany Navy': 0x000100,
+				'Norway': 0xA1B591,
+				'Royal Norwegian Navy': 0xB1A591,
+				'Mexico': 0xFAD1A2,
+				'Panama': 0x887EED,
+				'Honduras': 0x55B4CC,
+				'Brazil': 0x662EDD,
+				'Japan': 0xCCFF00,
+				'Imperial Japanese Navy': 0xCCFC00,
+				'China': 0xCCCCCC,
+				'Russia': 0x777666,
+				'Soviet Navy': 0x666777,
+				'France': 0x0055A4,
+				'French Navy': 0x0055B4,
+				'Denmark': 0x992C11,
+				'Spain': 0xCCFF33,
+				'Spanish Navy': 0x29FCC2,
+				'Sweden': 0xEEFFCC,
+				'Colombia': 0xCCCCCE,
+				'Belgium': 0x441992,
+				'Regia Marina': 0xBB99CC,
+				'Greece': 0xBBBCC2,
+				'Liberia': 0x876543,
+				'Confederate States Navy': 0x965ED1,
+				'Indian Navy': 0x654321,
+				'Mughal Empire': 0x765432,
+				'Jordan': 0x7BD888,
+				'East India Company': 0x1F90FF,
+				'Dutch East India Company': 0x2F90FF,
+				'Australia': 0x2E90FF,
+				'Royal Australian Navy': 0x2C90CC,
+				'New Zealand': 0x2C90FF,
+				'Royal New Zealand Navy': 0x3E90CC,
+				'Netherlands': 0xEB9749,
+				'Unknown': 0x777777
+			};
+
+			const groups = {};
+
+			// Group shipwrecks by flag
+			data.features.forEach(feature => {
+				const coords = feature.geometry.coordinates;
+				if (!coords || coords.length !== 2) return;
+				const [lon, lat] = coords;
+				const flag = feature.properties.Flag || 'Unknown';
+				if (!groups[flag]) groups[flag] = [];
+				groups[flag].push({ lat, lon, props: feature.properties });
+			});
+
+			const markerGeometry = new THREE.SphereGeometry(0.1, 12, 12);
+			const dummy = new THREE.Object3D();
+
+			// Create one InstancedMesh per flag group
+			Object.entries(groups).forEach(([flag, entries]) => {
+				const color = flagColors[flag] || 0xffffff; // fallback
+				const material = new THREE.MeshBasicMaterial({ color });
+				const instancedMesh = new THREE.InstancedMesh(markerGeometry, material, entries.length);
+				instancedMesh.userData = {};
+
+				entries.forEach((entry, i) => {
+				const pos = convertVector3(entry.lat, entry.lon, RADIUS + 0.5);
+				dummy.position.copy(pos);
+				dummy.updateMatrix();
+				instancedMesh.setMatrixAt(i, dummy.matrix);
+				instancedMesh.userData[i] = entry.props;
+				});
+
+				scene.add(instancedMesh);
+			});
+		});
+
+		const raycaster = new THREE.Raycaster();
+		const mouse = new THREE.Vector2();
+		let currentHovered = null;
+
+		window.addEventListener('mousemove', (event) => {
+			mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+			mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+			tooltip.style.left = event.clientX + 10 + 'px';
+			tooltip.style.top = event.clientY + 10 + 'px';
+		});
+
+		function checkIntersections() {
+			raycaster.setFromCamera(mouse, camera);
+			const intersects = raycaster.intersectObjects(scene.children, true);
+
+			if (intersects.length > 0) {
+				const obj = intersects[0].object;
+				if (obj instanceof THREE.InstancedMesh) {
+					const instanceId = intersects[0].instanceId;
+					if (instanceId != null) {
+						const props = obj.userData[instanceId];
+						if (currentHovered !== instanceId) {
+							currentHovered = instanceId;
+							tooltip.style.display = 'block';
+							tooltip.innerHTML = `
+								<strong>${props.Ship || 'Ship name not given'}</strong><br>
+								Flag: ${props.Flag || 'Unknown'}<br>
+								Sunk: ${props["Sunk date"] || 'Unknown'}<br>
+								Notes: ${props.Notes || ''}
+							`;
+						} return;
+					}
+				}
+			}
+			currentHovered = null;
+			tooltip.style.display = 'none';
+		}
+		
+		function animate() {
+			requestAnimationFrame(animate);
+			controls.update();
+			checkIntersections();
+			renderer.render(scene, camera);
+		}
+		animate();
+		
+		window.addEventListener('resize', () => {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+		});
+	</script>
+</body>
+</html>
