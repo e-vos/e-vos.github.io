@@ -102,7 +102,7 @@
 
 		const tooltip = document.getElementById('tooltip');
 		
-		fetch('/shipwrecks.geojson')
+		fetch('./shipwrecks.geojson')
 		.then(res => res.json())
 		.then(data => {
 			// Define colors by flag
