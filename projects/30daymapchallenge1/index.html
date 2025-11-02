@@ -23,40 +23,11 @@
 		display: none;
 		z-index: 10;
 	}
-	
-	#info-box {
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		background: rgba(255, 255, 255, 1);
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
-		border-radius: 4px;
-		padding: 15px 20px;
-		min-width: 25vw;
-		width: 35vw;
-		color: #111222;
-		font-size: 23px;
-		line-height: 1.2;
-		z-index: 20;
-	}
-
-	#info-box h2 {
-		margin: 0 0 8px 0;
-		font-size: 26px;
-	}
-
 </style>
 </head>
 <body>
 	<div id="tooltip"></div> <!-- for tooltip popup -->
 	
-	<div id="info-box">
-		<h2>30-Day Map Challenge: Day 1</h2>
-		<p>Authors: Map and manipulated data by Elliot Vosburgh; text and coordinate information by Wikipedia contributors</p>
-		<p>This is my entry for Day 1 of the 30-Day Map Challenge. Today's theme was "Points." I decided to brush up on my web scraping skills with this one by using Python to scrape Wikipedia tables for shipwreck data.</p>
-		<p>This little project makes a nice jumping off point for other 3D map ideas I have.</p>
-	</div>
-
 	<script type="module">
 		// threejs imports
 		import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js?module';
