@@ -1,10 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-	** UNDER CONSTRUCTION **
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vosburgh Research and Design</title>
+        <meta name="description" content="Vosburgh Research & Design, a geospatial consulting group" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="card-wrapper">
+            <div id="card" class="card">
+                <div class="card-inner">
+                    <section class="face front">
+                        <div class="company">
+                            <span>Vosburgh Research &amp; Design</span><br>
+                        </div>
+                        <div class="location">
+                            email <a style="pointer-events: all;" href="mailto:elliot@vosburgh.dev">elliot@vosburgh.dev</a>
+                            ●︎
+                            LinkedIn <a style="pointer-events: all" href="https://www.linkedin.com/in/elliotvosburgh/">@elliotvosburgh</a>
+                        </div>
+                        <div class="projects">
+                            <span id="services">Services offered</span><br>
+                            <!-- <span id="selected-work">Selected work</span> -->
+                        </div>
+                        <div class="self-info">
+                            <div class="logo">
+                                <div id="animation"></div>
+                            </div>
+                            <p class="title">Elliot Vosburgh</p>
+                            <p class="subtitle">Principal Consultant</p>
+                        </div>
+                    </section>
+                    <section class="face back">
+                        <div class="back-content">
+                            <p id="return-btn">↻ <em>Return to front</em></p>
+                            <p>
+                                I partner with my clients to understand their needs, developing products tailored to their individual goals. Across all projects, bridging science with application is part of my core ethos.
+                            </p>
+                            <p>
+                                Among other services, I can provide
+                            </p>
+                            <ul style="list-style: '-  '; list-style-position: inside;">
+                                <li>Cartographic design for print and digital media</li>
+                                <li>Web maps and geospatial web development</li>
+                                <li>Geospatial modeling, analytics, and monitoring</li>
+                                <li>Decision-support for planning, conservation, and management</li>
+                                <li>Advising for project strategy and scaling</li>
+                            </ul>
+                            <p>
+                                I'm currently available to work on projects of most scopes.
+                            </p>
+                        </div>
+                        <span class="back-quote">
+                            Guiding you from <em>where</em> to <em>why</em>
+                        </span>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="modal" id="projects-modal">
+            Projects
+        </div> -->
+        
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script type="module" src="script.js"></script>
+    </body>
 </html>

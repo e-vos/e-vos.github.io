@@ -1,0 +1,484 @@
+:root {
+    --card-bg: #e8e6e1;
+    --text: #111111;
+    --text-light: #6b6b6b;
+    --accent: #00aa4b;
+
+    --font-serif: 'Tinos', serif;
+    --font-sans: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 
+*   card
+*/
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body::before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 800px;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    transform: translateZ(0);
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(15%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.card-wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 40px auto;
+    perspective: 1200px;
+    animation: 3s fadeInUp;
+}
+
+.card {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    padding: 0;
+    background: none;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
+}
+
+.face {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    border-radius: 10px;
+
+    background: var(--card-bg);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    box-shadow: 0 4px 50px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.card.inactive {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.face::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/textures/cardstock4.jpg");
+    background-repeat: repeat;
+    background-size: 300px;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.face::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        2000px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+        #fff 0%,
+        #000 100%
+    );
+    mix-blend-mode: multiply;
+    opacity: var(--light-opacity, 0);
+    transition: opacity 1s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.front {
+    font-family: var(--font-serif);
+    color: var(--text);
+}
+
+.back {
+    transform: rotateY(180deg);
+    font-family: var(--font-serif);
+    color: var(--text);
+}
+
+.card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.face > * {
+    position: relative;
+    z-index: 1;
+}
+
+.face a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.face a:hover {
+    color: var(--accent);
+    text-shadow: none;
+}
+
+.front {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-serif);
+    color: var(--text);
+    padding: 10px;
+}
+
+.company {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+    line-height: 1.3rem;
+    letter-spacing: 0.1rem;
+    font-variant: small-caps;
+
+    background-color: #414141;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+    pointer-events: none;
+}
+
+.company em {
+    position: relative;
+    display: inline-block;
+    text-shadow: none;
+    color: black;
+}
+
+.company em::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 160%;
+    height: 60%;
+    background:
+        linear-gradient(to right,
+            transparent,
+            rgba(0, 170, 74, 0.3) 50%,
+            transparent
+        );
+    clip-path: polygon(25% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+
+.projects {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+    line-height: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-variant: small-caps;
+    cursor: pointer;
+
+    background-color: #414141;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+}
+
+.projects span {
+    transition: all 0.3s ease;
+}
+
+.projects span:hover {
+    color: var(--accent);
+    text-shadow: none;
+}
+
+.location {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+    line-height: 1.2rem;
+    letter-spacing: 0.1rem;
+
+    background-color: #414141;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+
+    font-variant: small-caps;
+    pointer-events: none;
+}
+
+.self-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+.logo {
+    padding-bottom: 5px;
+    pointer-events: none;
+}
+
+#animation {
+    width: 130px;
+    height: 130px;
+}
+
+.title {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 600;
+    background-color: #414141;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+    letter-spacing: 0.1em;
+    color: var(--text);
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-light);
+    padding-bottom: 5px;
+    pointer-events: none;
+}
+
+.subtitle {
+    font-size: 1em;
+    margin: 0;
+    background-color: #414141;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255,255,255,0.5);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 0;
+    color: var(--text-light);
+    pointer-events: none;
+}
+
+/*
+* back
+*/
+
+#return-btn {
+    position: fixed;
+    width: fit-content;
+    bottom: 10px;
+    left: 20px;
+    background: none;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+#return-btn:hover {
+    color: var(--accent);
+    text-shadow: none;
+}
+
+.back-content {
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px  rgba(0,0,0,0.9);
+    line-height: 1.3rem;
+}
+
+.back-content p {
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.back-content li {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.back-content li + li {
+  margin-top: 4px;
+}
+
+.back-quote {
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    pointer-events: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: rgba(255,255,255,0.3);
+    text-shadow: 0 -0.5px rgba(0,0,0,0.9);
+}
+
+.back-quote::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--accent)
+    );
+}
+
+.back-quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent)
+    );
+}
+
+.back-quote em {
+    position: relative;
+    color: 000;
+    display: inline-block;
+    z-index: 1;
+}
+
+.back-quote em::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160%;
+    height: 60%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 170, 74, 0.3) 50%,
+        transparent
+    );
+    clip-path: polygon(25% 0%, 100% 0%, 80% 100%, 0% 100%);
+    z-index: -1;
+}
+
+/* #projects-modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#projects-modal.active {
+    visibility: visible;
+    opacity: 1;
+} */
+
+/* 
+*   modals
+*/
+
+/* .modal {
+    height: 1000px;
+    width: 1000px;
+    background: var(--card-bg);
+    z-index: 10;
+    position: absolute;
+    padding: 40px;
+    overflow: hidden;
+    box-shadow: 0 4px 50px rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-family: var(--font-sans);
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/textures/cardstock4.jpg");
+    background-repeat: repeat;
+    background-size: 300px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.5s ease;
+} */
