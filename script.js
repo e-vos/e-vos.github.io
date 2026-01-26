@@ -98,24 +98,26 @@ function rotateToMouse(e) {
     });
 }
 
-card.addEventListener("mouseenter", () => {
-    bounds = card.getBoundingClientRect();
-});
-
-card.addEventListener("mousemove", rotateToMouse);
-
-card.addEventListener("mouseleave", () => {
-    targetX = 0;
-    targetY = 0;
-
-    faces.forEach(face => {
-        face.style.boxShadow =
-            "0 4px 50px rgba(255, 255, 255, 0.3)";
-        face.style.setProperty("--light-opacity", "0");
+if (window.matchMedia("(pointer: fine)").matches) {
+    card.addEventListener("mouseenter", () => {
+        bounds = card.getBoundingClientRect();
     });
 
-    bounds = null;
-});
+    card.addEventListener("mousemove", rotateToMouse);
+
+    card.addEventListener("mouseleave", () => {
+        targetX = 0;
+        targetY = 0;
+
+        faces.forEach(face => {
+            face.style.boxShadow =
+                "0 4px 50px rgba(255, 255, 255, 0.3)";
+            face.style.setProperty("--light-opacity", "0");
+        });
+
+        bounds = null;
+    });
+}
 
 /*
 *   modals
