@@ -35,8 +35,8 @@ import('https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js').then(
         const minZ = 1;
         const maxZ = 6.3;
 
-        const center = (minZ + maxZ) / 2;     // 3.5
-        const amplitude = (maxZ - minZ) / 2;  // 2.5
+        const center = (minZ + maxZ) / 2;
+        const amplitude = (maxZ - minZ) / 2;
 
         camera.position.z = center + Math.sin(zoomTime) * amplitude;
 
