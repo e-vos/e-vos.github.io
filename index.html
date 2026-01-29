@@ -4,79 +4,93 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Vosburgh Research and Design</title>
-        <meta name="description" content="Vosburgh Research & Design, a geospatial consulting group" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <meta name="description" content="Vosburgh Research & Design" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
-        <div class="card-wrapper">
-            <div id="card" class="card">
-                <div class="card-inner">
-                    <section class="face front">
-                        <div class="company">
-                            <span>Vosburgh Research &amp; Design</span><br>
-                        </div>
-                        <div class="location">
-                            <span class="contact-group">
-                                email <a style="pointer-events: all;" href="mailto:elliot@vosburgh.dev">elliot@vosburgh.dev</a>
-                            </span>
-                            <span class="separator">●︎</span>
-                            <span class="contact-group">
-                                LinkedIn <a style="pointer-events: all" href="https://www.linkedin.com/in/elliotvosburgh/">@elliotvosburgh</a>
-                            </span>
-                        </div>
-                        <div class="projects">
-                            <span id="services">Services offered</span><br>
-                            <!-- <span id="selected-work">Selected work</span> -->
-                        </div>
-                        <div class="self-info">
-                            <div class="logo">
-                                <div id="animation"></div>
-                            </div>
-                            <p class="title">Elliot Vosburgh</p>
-                            <p class="subtitle">Principal Consultant</p>
-                        </div>
-                    </section>
-                    <section class="face back">
-                        <div class="back-content">
-                            <p>
-                                I partner with my clients to understand their needs, developing products tailored to their individual goals. Across all projects, bridging science with application is part of my core ethos.
-                            </p>
-                            <p>
-                                Among other services, I provide:
-                            </p>
-                            <ul style="list-style: '-  '; list-style-position: inside;">
-                                <li>Cartographic design for print and digital media</li>
-                                <li>Web maps and geospatial web development</li>
-                                <li>Geospatial modeling, analytics, and monitoring</li>
-                                <li>Decision-support for planning, conservation, and management</li>
-                                <li>Advising for project strategy and scaling</li>
-                            </ul>
-                            <p>
-                                I'm currently available to work on projects of most scopes.
-                            </p>
-                        </div>
-                        <p id="return-btn">↻ <em>Return to front</em></p>
-                        <span class="back-quote">
-                            Guiding you from <em>where</em> to <em>why</em>
-                        </span>
-                    </section>
+
+        <div class="container">
+            
+            <header class="box header">
+                <div id="self-image-preview"></div>
+                <div class="header-inner-container">
+                    <h1><span class="self-image" data-img="assets/self.jpg">Elliot Vosburgh</span> *<br>Researcher &amp; developer<br>based in New England</h1>
+                    <div id="globe"></div>
                 </div>
-            </div>
+            </header>
+
+            <aside class="box sidebar">
+                <h2>* About</h2>
+                <p>
+                    I use geospatial science to bridge between <em>where</em> and <em>why</em>. My work spans a range of topics, but my current focus is resilience planning and natural hazards modeling.
+                </p>
+                <p>
+                    In the past, I've led projects within research and government, and as an independent consultant. My work has been featured in news media and by academic insitutions, and I have given talks to various public and private organizations.
+                </p>
+                <p>
+                    Currently <span style="background-color: var(--highlight); pointer-events: none; color: white;">available</span> for freelance projects of all scopes.
+                </p>
+                
+                <div style="margin-top: 3rem;">
+                    <h2>Connect</h2>
+                    <ul style="font-family: var(--font-mono); font-size: 0.9rem;">
+                        <li><a href="elliot@vosburgh.dev">Email Me ↗</a></li>
+                        <li><a href="https://www.linkedin.com/in/elliotvosburgh" target="_blank">LinkedIn ↗</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="box content">
+                
+                <div style="margin-bottom: 4rem;">
+                    <h2>01 — Selected Projects</h2>
+                    <ul>
+                        <li>
+                            <span class="meta">2026 / STUDY</span>
+                            <a href="#" class="project-link">Community Access to Blue Space: A Spatial Equity Analysis</a>
+                        </li>
+                        <li>
+                            <span class="meta">2026 / PRODUCT</span>
+                            <a href="https://vosburgh.dev/lcsws_dashboard" target="_blank" class="project-link">Little Compton Stone Wall Stewards</a>
+                        </li>
+                        <li>
+                            <span class="meta">2025 / DATASET</span>
+                            <a href="https://vosburgh.dev/walls" target="_blank" class="project-link">Rhode Island Stone Wall Mapping Project</a>
+                        </li>
+                        <li>
+                            <span class="meta">2024 / PRODUCT</span>
+                            <a href="#" class="project-link">Coastal Resilience Planning for Rural Maine Islands</a>
+                        </li>
+                        <li>
+                            <span class="meta">2023 / STUDY</span>
+                            <a href="#" class="project-link">HLS and Post-fire Vegetation Response in the Sierra Nevada</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>02 — Journal</h2>
+                    <ul>
+                        <li>
+                            <span class="meta">JAN 2026 / ESSAY</span>
+                            <a href="#" class="project-link">Lifting Gorbachev's Plutonium-241 Curtain</a>
+                        </li>
+                        <li>
+                            <span class="meta">OCT 2025 / ESSAY</span>
+                            <a href="#" class="project-link">Digital Divide in Environmental Data Accessibility</a>
+                        </li>
+                        <li>
+                            <span class="meta">SEP 2024 / NOTE</span>
+                            <a href="#" class="project-link">Geohistorical Applications</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </main>
         </div>
 
-        <!-- <div class="modal" id="projects-modal">
-            Projects
-        </div> -->
-        
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script type="module" src="script.js"></script>
     </body>
 </html>
