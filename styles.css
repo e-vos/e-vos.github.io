@@ -146,6 +146,36 @@ li {
     flex-direction: column;
 }
 
+.pagination-container {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.pagination-btn {
+    background: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.pagination-btn:hover {
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+    color: white;
+}
+
+.pagination-btn.active {
+    background-color: var(--black);
+    color: white;
+    cursor: default;
+    pointer-events: none;
+}
+
 .meta {
     font-family: var(--font-mono);
     font-size: 0.75rem;
