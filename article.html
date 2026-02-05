@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vosburgh Research & Design</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+
+        <div class="container single-col">
+
+            <main class="box content">
+                <a href="/" class="article-back-link">← Back to home</a>
+                <div id="article-container">
+                    <p>Content loading</p>
+                </div>
+                <div id="lightbox" class="lightbox">
+                    <span class="close-btn">close</span>
+                    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged Image">
+                </div>
+            </main>
+        </div>
+
+        <script>
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close-btn');
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+            };
+
+            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
+            const params = new URLSearchParams(window.location.search);
+            const pageId = params.get('id');
+            const container = document.getElementById('article-container');
+
+            if (pageId) {
+                fetch(`content/${pageId}.html`)
+                    .then(response => {
+                        if (!response.ok) throw new Error("Article not found.");
+                        return response.text();
+                    })
+                    .then(html => {
+                        container.innerHTML = html;
+                        
+                        const h1 = container.querySelector('h1');
+                        if (h1) document.title = h1.innerText + " | Vosburgh Research & Design";
+
+                        container.querySelectorAll('img.article-img').forEach(img => {
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'article-img-wrapper';
+                            img.parentNode.insertBefore(wrapper, img);
+                            wrapper.appendChild(img);
+
+                            img.style.cursor = 'pointer';
+                            img.addEventListener('click', (e) => {
+                                lightboxImg.src = e.target.src;
+                                lightbox.classList.add('active');
+                            });
+                        });
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        container.innerHTML = `<p>Error: Could not load article. <a href="/">Go back</a>.</p>`;
+                    });
+            } else {
+                container.innerHTML = `<p>No article selected.</p>`;
+            }
+        </script>
+    </body>
+</html>

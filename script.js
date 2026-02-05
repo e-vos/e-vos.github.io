@@ -1,5 +1,5 @@
 // script.js
-// last update: 29 jan 26
+// last update: 4 feb 26
 
 import('https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js').then(THREE => {
     const globeContainer = document.getElementById('globe');
