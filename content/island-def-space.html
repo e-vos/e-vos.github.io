@@ -1,0 +1,67 @@
+<div class="article-header">
+    <h1>Quantifying Defensible Space for Rural Island Communities</h1>
+    <span class="meta article">2024 / STUDY</span><br>
+    <span class="meta article">
+        This work incorporates data generated during a <a href="article.html?id=lupc-islands-project">previous project</a> with the <a href="https://www.maine.gov/dacf/lupc/">Maine Land Use Planning Commission (LUPC)</a>.
+    </span>
+</div>
+
+<img src="assets/island-def-space-cover.png" class="article-img">
+<span class="meta article">
+    Classification of relative fire risk for island structures on Matinicus. Tree cover and structure outlines were both derived from LiDAR data. Higher structure fire risk is directly linked to tree proximity.
+</span>
+
+<h2>Problem: Fire risk and EMS disconnect</h2>
+<p>
+    In the <a href="https://www.maine.gov/dacf/lupc/laws_rules/rule_chapters/Ch10_SubchapterIII.pdf">Maine Land Use Planning Commission's Land Use Districts and Standards document</a> (Chapter 10.25,e "Development Standards"), the following stipulation is made:
+</p>
+<p class="article-quote">
+    There will be a sufficient area of clearing allowed around buildings to maintain the minimum extent needed for defensible space for fire safety, <strong>generally 30 feet in width.</strong>
+</p>
+<p>
+    Defensible space is critical for reducing the amount of combustible fuel near dwellings and other structures. By defining three defensible zones around structures, an easily-understood and effective management system is used across the country for reducing property loss, injury, and death by fire. These zones are typically 0-5 feet, 5-30 feet, and 30-100 feet, respectively. Each zone requires different vegetation management, the sparseness of which increases as proximity to the structure increases.
+</p>
+<p>
+    Most island communities lack robust, full-service fire departments. They often rely on assistance from mainland departments, and have limited local resources available to suppress fires. The remoteness of these communities limits the speed and scope of fire suppression, and basic water supply issues are a real concern. Fire hydrants, for example, are rare. The forested landscape of these islands, and the wooden construction of most buildings, compounds with this resource scarcity. What is more, the existence of an increasingly large seasonal population coincides with those times of the year considered at high risk for fires.
+</p>
+
+<h2>Solution: LiDAR integration with existing datasets</h2>
+<p>
+    Previously, I had performed a structure inventory for all 319 LUPC coastal islands (2024), which used LiDAR and NAIP imagery (<a href="article.html?id=lupc-islands-project">outlined here</a>). To demonstate its usefulness beyond coastal resilience planning, I integrated it into a defensible space analysis for 3 communities: <a href="https://en.wikipedia.org/wiki/Muscle_Ridge_Islands,_Maine">Muscle Ridge Township</a>, <a href="https://en.wikipedia.org/wiki/Matinicus_Isle,_Maine">Matinicus Isle Plantation</a>, and <a href="https://en.wikipedia.org/wiki/Monhegan,_Maine">Monhegan Island Plantation</a>.
+</p>
+
+<h2>Methodology</h2>
+<p>
+    Buildings were classified from LiDAR. After several regularizing and elimination steps, a comparison was made between this dataset and the one generated as part of the aforementioned Islands project. A second dataset, corresponding to trees, was also created from the same input LiDAR data.
+</p>
+<p>
+    Proximities between buildings and trees were calculated, and buildings were binned into three categories: within 5 feet, within 30 feet, and within 100 feet. Building proximity to water was also calculated. Structure risk was then calculated using weights applied to these key fields.
+</p>
+
+<img src="assets/Matinicus_ds.jpg" class="article-img">
+<span class="meta article">
+    Matinicus Isle
+</span>
+
+<h2>Significance</h2>
+<p>
+    The results indicate that many structures on these islands are at major risk of fire due to their proximity to trees and distance from water. 479 structures were analyzed, with the mean fire risk found to be 0.84 (out of a maximum of 1) with a standard deviation of 0.27. The most frequently occurring value (mode) was 1, indicating that a substantial portion of structures meet the highest modeled risk category.
+</p>
+
+<p>
+    This analysis demonstrates the broader applicability of LiDAR-derived products for rural planning. These findings are particualrly consequential given the limited EMS capacity of Maine's island communities. In this context, even small increases in ignitiation probability or response time can result in disproportionately severe outcomes.
+</p>
+
+<img src="assets/MuscleRidge_ds.jpg" class="article-img">
+<span class="meta article">
+    Muscle Ridge Islands
+</span>
+
+<img src="assets/Monhegan_ds.jpg" class="article-img">
+<span class="meta article">
+    Monhegan
+</span>
+
+<span class="meta article">
+    Note: The views expressed herein are my own and are not representative of any official positions by the State of Maine or its agencies. This work was begun after my employment ended with the Maine Land Use Planning Commission and was not done at their request.
+</span>

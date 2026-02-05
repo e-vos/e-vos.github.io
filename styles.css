@@ -5,6 +5,7 @@
 
 :root {
     --bg: #f0f0f0;
+    --bg-quote: #dbe3eb;
     --grid-line: #d3d3d3;
     --black: #1a1a1a;
     --highlight: #2563EB;
@@ -293,6 +294,12 @@ li {
     margin-bottom: 10px;
 }
 
+.article-quote {
+    padding-left: 10px;
+    border-left: 2px solid var(--highlight);
+    background: var(--bg-quote);
+}
+
 .lightbox {
     display: none;
     position: fixed;
@@ -311,6 +318,7 @@ li {
 }
 
 .lightbox-content {
+    max-width: 90%;
     max-height: 90vh;
     object-fit: contain;
     box-shadow: 0 4px 10px rgba(0,0,0,0.8);
