@@ -1,6 +1,6 @@
 <div class="article-header">
     <h1>Post-fire Vegetation Response in the Sierra Nevada</h1>
-    <span class="meta article">2024 / STUDY</span><br>
+    <span class="meta article">2023 / STUDY</span><br>
     <span class="meta article">
         This study tests a new method for quantifying post-fire vegetation response using <a href="https://hls.gsfc.nasa.gov/">NASA's Harmonized Landsat Sentinel-2 (HLS) project</a>.
     </span>
@@ -26,14 +26,14 @@
 <h2>Methodology</h2>
 <img src="assets/burnregionselection.png" class="article-img">
 <span class="meta caption">
-    Extraction of the burn region can be done easily by calculating certain vegetation indices. In the above figure, I gained the burn region by filtering out certain pixel values from an NDVI raster.
+    Extraction of the burn region can be done easily by calculating certain vegetation indices. In the above figure, I gained the burn region by filtering out certain pixel values from an NDVI raster. Utilizing the pre-defined burn regions from CAL FIRE, however, is more efficient.
 </span>
 <p>
-    While the burn region can accurately be extracted from HLS data itself, it was more convenient to use <a href="https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters">the one produced by CAL FIRE</a>. This polygon was split into 17 sectors of roughly 18,000 acres each. A representative HLS image was downloaded to create a point grid, where each point corresponded to the center of an HLS pixel. These points were then assigned a value based on the sector they were located in.
+    While the burn region can accurately be extracted from HLS data itself, it was more convenient to use <a href="https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters">the one produced by CAL FIRE</a>. This dataset provides a one-stop shop for most fire events, containing many key attributes. The polygon for this specific event was split into 17 sectors of roughly 18,000 acres each. A representative HLS image was downloaded to create a point grid, where each point corresponded to the center of an HLS pixel. These points were then assigned a value based on the sector they were located in.
 </p>
 <img src="assets/sectors.png" class="article-img">
 <span class="meta caption">
-    Burn region split into equal area sectors.
+    Burn region split into equal area sectors of ≈18,000 acres each.
 </span>
 <p>
     HLS data was downloaded for 2020, 2021, 2022, and 2023. Normalized Difference Vegetation Index (NDVI) was then calculated for each capture date. Overall NDVI value changes were calculated for each year. 2020 saw a mean NDVI change of -0.502. In 2021, the mean NDVI change was still negative overall at -0.051. A rapid increase in greenness was seen in 2022 with a mean change of 0.381. 2023 saw the strongest mean change at 0.519. Intrasector change calculations showed that great variation existed in both damage and regrowth. Sector 6 in particular, located in the western-central portion of the burn region, was found ot be both most negatively affected overall by the fire and to have exhibited the most growth overall when compared to other sectors. Sector 1, the most south-westerly sector, saw slightly negative change between 2022 and 2023, despite relatively strong regrowth occurring between 2021 and 2022.

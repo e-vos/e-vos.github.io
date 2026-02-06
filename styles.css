@@ -209,6 +209,12 @@ li {
     border-left: var(--border-width) solid var(--black);
 }
 
+.container.single-col .article-img-wrapper {
+    display: block;
+    width: fit-content;
+    margin: 0.5rem auto;
+}
+
 .container.single-col .sidebar {
     display: none;
 }
@@ -229,8 +235,8 @@ li {
 }
 
 .article-header {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--grid-line);
 }
 
@@ -254,10 +260,9 @@ li {
 
 .article-img-wrapper {
     position: relative;
+    display: inline-block;
     max-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto;
 }
 
 .article-img-wrapper::after {
