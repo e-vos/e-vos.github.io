@@ -92,59 +92,83 @@ if (supportsHover && selfTrigger && selfPreview) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const list = document.getElementById('journal-list');
-    const paginationContainer = document.getElementById('journal-pagination');
+function initPagination(listId, paginationId, itemsPerPage) {
+    const list = document.getElementById(listId);
+    const container = document.getElementById(paginationId);
     
-    if (!list || !paginationContainer) return;
+    if (!list || !container) return;
 
     const items = Array.from(list.children);
-    const itemsPerPage = 3;
     let currentPage = 1;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
 
-    function renderPage(page) {
-        const totalPages = Math.ceil(items.length / itemsPerPage);
-        
+    if (totalPages <= 1) {
+        container.style.display = 'none';
+        return;
+    }
+
+    renderItems(1);
+
+    const initialHeight = list.offsetHeight;
+    list.style.minHeight = `${initialHeight}px`;
+
+    renderControls();
+
+    function renderItems(page) {
         if (page < 1) page = 1;
         if (page > totalPages) page = totalPages;
         
         currentPage = page;
 
-        items.forEach(item => {
-            item.style.display = 'none';
-        });
-
+        items.forEach(item => item.style.display = 'none');
+        
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
-
+        
         items.slice(start, end).forEach(item => {
             item.style.display = 'flex';
         });
 
-        renderControls(totalPages);
+        const infoSpan = container.querySelector('.page-info');
+        if (infoSpan) infoSpan.innerText = `Page ${currentPage} of ${totalPages}`;
+
+        updateButtonStates();
     }
 
-    function renderControls(totalPages) {
-        paginationContainer.innerHTML = '';
+    function updateButtonStates() {
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
 
-        if (totalPages <= 1) return;
-
-        for (let i = 1; i <= totalPages; i++) {
-            const btn = document.createElement('button');
-            btn.innerText = i;
-            btn.classList.add('pagination-btn');
-            
-            if (i === currentPage) {
-                btn.classList.add('active');
-            }
-
-            btn.addEventListener('click', () => {
-                renderPage(i);
-            });
-
-            paginationContainer.appendChild(btn);
-        }
+        if (prevBtn) prevBtn.disabled = currentPage === 1;
+        if (nextBtn) nextBtn.disabled = currentPage === totalPages;
     }
 
-    renderPage(1);
+    function renderControls() {
+        container.innerHTML = '';
+
+        const prevBtn = document.createElement('button');
+        prevBtn.innerHTML = '← prev';
+        prevBtn.className = 'pagination-btn prev-btn';
+        prevBtn.onclick = () => renderItems(currentPage - 1);
+
+        const infoSpan = document.createElement('span');
+        infoSpan.className = 'page-info';
+        infoSpan.innerText = `Page ${currentPage} of ${totalPages}`;
+
+        const nextBtn = document.createElement('button');
+        nextBtn.innerHTML = 'next →';
+        nextBtn.className = 'pagination-btn next-btn';
+        nextBtn.onclick = () => renderItems(currentPage + 1);
+
+        container.appendChild(prevBtn);
+        container.appendChild(infoSpan);
+        container.appendChild(nextBtn);
+
+        updateButtonStates();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initPagination('project-list', 'project-pagination', 4);
+    initPagination('journal-list', 'journal-pagination', 4);
 });
