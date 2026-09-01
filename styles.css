@@ -58,14 +58,14 @@ h1 {
 }
 
 .self-image {
-    text-decoration: underline;
     transition: 0.1s ease all;
     cursor: pointer;
 }
 
 .self-image:hover {
-    color: var(--blue);
-    text-decoration-color: var(--blue);
+    color: green;
+    text-decoration-color: green;
+    text-decoration: underline;
 }
 
 #self-image-preview {
