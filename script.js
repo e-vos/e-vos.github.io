@@ -32,9 +32,9 @@ import('https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js').then(
 
         if (globeContainer.clientWidth === 0) return;
 
-        zoomTime += 0.002;
+        zoomTime += 0.003;
 
-        const minZ = 1;
+        const minZ = 0.5;
         const maxZ = 6.3;
 
         const center = (minZ + maxZ) / 2;
@@ -66,6 +66,18 @@ const selfTrigger = document.querySelector(".self-image");
 
 const supportsHover = window.matchMedia('(hover: hover)').matches;
 
+function openModal() {
+  conditionsPanel.classList.add('active');
+  backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  conditionsPanel.classList.remove('active');
+  backdrop.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 if (supportsHover && selfTrigger && selfPreview) {
     selfTrigger.addEventListener("mouseenter", () => {
         selfPreview.style.backgroundImage = `url(${selfTrigger.dataset.img})`;
@@ -86,6 +98,10 @@ if (supportsHover && selfTrigger && selfPreview) {
         selfPreview.style.left = `${x}px`;
         selfPreview.style.top = `${y}px`;
     });
+
+    // selfTrigger.addEventListener("click",() => {
+    //     selfPreview.style.display = "none";
+    // });
 
     selfTrigger.addEventListener("mouseleave", () => {
         selfPreview.style.display = "none";

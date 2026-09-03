@@ -61,14 +61,13 @@ h1 {
     transition: 0.1s ease all;
     padding: 0 1px 0 1px;
     background-color: rgba(218, 165, 165, 0.75);
-    cursor: pointer;
+    cursor: help;
 }
 
 .self-image:hover {
     color: white;
     background-color: var(--highlight);
-    text-decoration-color: green;
-    text-decoration: underline;
+    border: 15px solid var(--bg);
 }
 
 #self-image-preview {
@@ -212,6 +211,13 @@ li {
     font-size: 1.1rem;
     display: inline-block;
     align-self: flex-start;
+}
+
+.project-link-dead {
+    font-size: 1.1rem;
+    display: inline-block;
+    align-self: flex-start;
+    pointer-events: none;
 }
 
 .container.single-col {
