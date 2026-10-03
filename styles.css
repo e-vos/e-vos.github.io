@@ -54,7 +54,7 @@ h1 {
     font-size: 1.8rem;
     font-weight: normal;
     margin: 0;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .self-image {
@@ -206,6 +206,12 @@ li {
 
 .meta.caption {
     margin-bottom: 0;
+}
+
+.article-link {
+    font-size: 1.1rem;
+    display: inline-block;
+    align-self: flex-start;
 }
 
 .project-link {
