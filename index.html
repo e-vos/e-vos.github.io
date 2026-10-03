@@ -22,12 +22,42 @@
             </header>
 
             <aside class="box sidebar">
-                <p>
-                    Currently, I am a <em>Ph.D.</em> researcher in remote sensing. I have held positions in government, non-profits, and academic institutions.
-                </p>
                 <p style="margin-bottom: 3rem;">
                     My work focuses on remote sensing of natural hazards and climate resilience topics, with special interests in 3-D and multispectral fusion applications.
                 </p>
+
+                <!-- <div>
+                    <h2 style="pointer-events: none;">Recent positions</h2>
+                    <ul style="font-size: 0.9rem; list-style-type: disc; padding: 5px;">
+                        <li style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem;">
+                            <div style="text-align: left;">
+                                <b style="display: block;">Graduate Research Assistant</b>
+                                <i style="font-size: 0.85rem;">University of Rhode Island</i>
+                            </div>
+                            <div style="text-align: right; font-size: 0.9rem; white-space: nowrap;">
+                                Aug 2026 - Present
+                            </div>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem;">
+                            <div style="text-align: left;">
+                                <b style="display: block;">Principal Consultant</b>
+                                <i style="font-size: 0.85rem;">Freelance Consulting</i>
+                            </div>
+                            <div style="text-align: right; font-size: 0.9rem; white-space: nowrap;">
+                                May 2024 - Present
+                            </div>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.9rem;">
+                            <div style="text-align: left;">
+                                <b style="display: block;">Research Analyst 1</b>
+                                <i style="font-size: 0.9rem;">Environmental Data Center, URI</i>
+                            </div>
+                            <div style="text-align: right; font-size: 0.85rem; white-space: nowrap;">
+                                Sep 2024 – Feb 2025; Mar 2026 - Aug 2026
+                            </div>
+                        </li>
+                    </ul>
+                </div> -->
                 
                 <div>
                     <h2 style="pointer-events: none">Connect</h2>
@@ -40,17 +70,44 @@
             </aside>
 
             <main class="box content">
-                
+                <div id="project-preview">
+                    <img id="project-preview-image" src="" alt="">
+                    <div id="project-preview-content">
+                        <h3 id="project-preview-title"></h3>
+                        <p id="project-preview-description"></p>
+                    </div>
+                </div>
                 <div style="margin-bottom: 4rem;">
                     <h2 style="pointer-events: none">Selected Projects</h2>
                     <ul id="project-list">
                         <li>
                             <span class="meta">2026 / PRODUCT</span>
-                            <a href="https://vosburgh.dev/lcsws_dashboard" target="_blank" rel="noopener noreferrer" class="project-link">Little Compton Stone Wall Stewards</a>
+                            <a
+                                href="https://vosburgh.dev/lcsws_dashboard"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                data-img="assets/lcsws_cover.jpg"
+                                data-title="Little Compton Stone Wall Stewards"
+                                data-description="An interactive dashboard for documenting local stone wall ecology, geology, and structure in Little Compton, Rhode Island."
+                            >
+                                Little Compton Stone Wall Stewards
+                            </a>
                         </li>
+
                         <li>
                             <span class="meta">2025 / DATASET</span>
-                            <a href="https://vosburgh.dev/walls" target="_blank" rel="noopener noreferrer" class="project-link">Rhode Island Stone Wall Mapping Project</a>
+                            <a
+                                href="https://vosburgh.dev/walls"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                data-img="assets/riswmp_cover.png"
+                                data-title="Rhode Island Stone Wall Mapping Project"
+                                data-description="A comprehensive dataset of Rhode Island's stone walls, provided as an interactive web map and hosted on the Rhode Island Geographic Information System (RIGIS)."
+                            >
+                                Rhode Island Stone Wall Mapping Project
+                            </a>
                         </li>
                     </ul>
                     <div id="project-pagination" class="pagination-container"></div>

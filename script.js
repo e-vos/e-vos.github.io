@@ -1,5 +1,5 @@
 // script.js
-// last update: 4 feb 26
+// last update: 2026-10-02
 
 import('https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js').then(THREE => {
     const globeContainer = document.getElementById('globe');
@@ -105,6 +105,48 @@ if (supportsHover && selfTrigger && selfPreview) {
 
     selfTrigger.addEventListener("mouseleave", () => {
         selfPreview.style.display = "none";
+    });
+}
+
+const projectPreview = document.getElementById("project-preview");
+const projectPreviewImage = document.getElementById("project-preview-image");
+const projectPreviewTitle = document.getElementById("project-preview-title");
+const projectPreviewDescription = document.getElementById("project-preview-description");
+
+const projectLinks = document.querySelectorAll(".project-link");
+
+if (supportsHover && projectPreview) {
+
+    projectLinks.forEach(link => {
+
+        link.addEventListener("mouseenter", () => {
+            projectPreviewImage.src = link.dataset.img;
+            projectPreviewImage.alt = link.dataset.title;
+            projectPreviewTitle.textContent = link.dataset.title;
+            projectPreviewDescription.textContent = link.dataset.description;
+            projectPreview.style.display = "block";
+        });
+
+        link.addEventListener("mousemove", (e) => {
+            const pad = 20;
+            const x = Math.min(
+                window.innerWidth - projectPreview.offsetWidth - pad,
+                e.clientX + pad
+            );
+
+            const y = Math.min(
+                window.innerHeight - projectPreview.offsetHeight - pad,
+                e.clientY + pad
+            );
+
+            projectPreview.style.left = `${x}px`;
+            projectPreview.style.top = `${y}px`;
+        });
+
+        link.addEventListener("mouseleave", () => {
+            projectPreview.style.display = "none";
+        });
+
     });
 }
 
